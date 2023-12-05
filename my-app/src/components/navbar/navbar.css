@@ -1,5 +1,4 @@
 .navbar {
-  padding-right: 1rem;
     color: rgb(210, 210, 210);
 }
 .big-icon{
@@ -8,6 +7,12 @@
     border-radius: 100%;
   
     
+}
+.sidebar-custom > div > header > div {
+    width: 100%;
+    margin-right: 0;
+    display: flex;
+    justify-content: space-between;
 }
 nav > div > button {
     background-color: black;

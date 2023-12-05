@@ -1,13 +1,13 @@
 
 
 import './App.css'
-import Index from './pages/dashboard/welcome/index'
+import SidebarMain from './components/sidebar/sidebar'
 
 function App() {
 
   return (
     <main>
-      <Index/>
+      <SidebarMain/>
     </main>
   )
 }

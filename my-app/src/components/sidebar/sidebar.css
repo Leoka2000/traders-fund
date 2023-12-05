@@ -5,11 +5,15 @@
   right: auto;
   bottom: 0%;
   overflow: auto;
-  
-  background-color: rgb(46, 46, 46);
-  padding-left: 30px;
+  font-family: 'DM Sans', sans-serif;
+  background-color: rgb(23, 23, 23);
   color: rgb(210, 210, 210)
 }
+span {
+    font-family: 'DM Sans', sans-serif;
+}
+
+
 .font-color{
     color: rgb(210, 210, 210)
 }
@@ -17,18 +21,36 @@
     background-color: rgb(22, 22, 22);
     color: rgb(210, 210, 210)
 }
-.bar {
-    border-bottom: 1px solid rgb(54, 54, 54);
+.bar-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bar-wrapper > div {
+    border-bottom: 1px solid rgb(33, 33, 33);
     padding-top: 0.5rem;
     margin-bottom: 0.5rem;
+    width: 85%;
 }
 .logo-wrapper {
-    width: 7rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.gap-3 > div > span, .custom-font {
+    font-family: 'DM Sans', sans-serif;
+}
+.logo-wrapper > div {
+    width: 5rem;
+    display: flex;
+    justify-content: center;
 }
 .logo-wrapper > img {
-width: 100%;
+
 object-fit: cover;
 padding: 0.5rem
 } 
+
 
 
