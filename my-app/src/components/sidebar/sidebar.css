@@ -38,13 +38,13 @@ span {
     justify-content: center;
 
 }
+
 .gap-3 > div > span, .custom-font {
     font-family: 'DM Sans', sans-serif;
 }
 .logo-wrapper > div {
     width: 5rem;
-    display: flex;
-    justify-content: center;
+   
 }
 .logo-wrapper > img {
 

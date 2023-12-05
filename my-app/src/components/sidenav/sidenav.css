@@ -1,0 +1,25 @@
+.logo-wrapper > div {
+    width: 3rem;
+    display: flex;
+    justify-content: flex-start;
+   
+}
+.gradient {
+    -webkit-text-fill-color: transparent;
+    background-image: url(../../assets/brand/gradient.png);
+    background-position: 0 0;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+   
+}
+.logo-wrapper > img {
+
+object-fit: cover;
+padding: 0.5rem;
+width:100%
+} 
+
+.MuiTypography-root  {
+    font-family: 'DM Sans', sans-serif;
+}
