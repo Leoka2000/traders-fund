@@ -1,34 +1,21 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
+import React, { useEffect, useRef, useState } from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
+import {Link, useNavigate} from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import {useForm} from 'react-hook-form'
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {useLoginMutation} from '../../features/auth/authApiSlice'
 import Logo from '../../assets/brand/traderslogo.png'
-import { IconBase } from 'react-icons';
 import './index.css'
-function Copyright(props: any) {
-  return (
-    <Typography className='gradient' variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Traders Fund
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import { useDispatch } from 'react-redux';
 
-// TODO remove, this demo shouldn't need to reset the theme.
 const darkTheme = createTheme({
 
     palette: {
@@ -42,7 +29,7 @@ const darkTheme = createTheme({
       secondary: {
         main: '#f44336',
         
-        light: 'linear-gradient(45deg, #e5735e, #af2b2b)',
+        
         dark: '#af2b2b',
       },
       background: {
@@ -61,14 +48,43 @@ const darkTheme = createTheme({
     },
   });
 export default function SignIn() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+ const userRef = useRef();
+ const errRef = useRef()
+ const [user, setUser] = useState<string>('')
+ const [pwd, setpwd] = useState<string>('')
+ const [errMsg, setErrMsg] = useState<string>('')
+ const navigate = useNavigate<any>()
+const [login, {isLoading}] = useLoginMutation()
+const dispatch = useDispatch()
+
+useEffect(() => {
+setErrMsg('')
+}, [user, pwd])
+
+const handleSubmit = async (e) => {
+  e.preventDeafult()
+  
+  try {
+    const userData = await login ({ user, pwd}).unwrap()
+    dispatch(setCredentials({...userData, user}))
+    setUser('')
+    setpwd('')
+    navigate('/')
+  }
+  catch (err) {
+    if (!err?.response) {
+      setErrMsg('no server response')
+    } else if (err.response?.status === 400) {
+      setErrMsg('missing username or password') 
+    } else if (err.response?.status === 401) {
+      setErrMsg('unauthorized');
+    } else {
+      setErrMsg ('login failed')
+    }
+    errRef.current.focus()
+  }
+}
+
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -85,18 +101,22 @@ export default function SignIn() {
          
             <img className='w-20' src={Logo}/>
           
-          <Typography className='gradient' component="h1" variant="h3">
-            Sign in
+          <Typography className='gradient text-center' component="h1" variant="h3">
+            Dashboard Login
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          {/* onSubmit={handleSubmit} on Box component */}
+          
+          <Box component="form"   sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
               fullWidth
+           
               id="email"
               label="Email Address"
               name="email"
               autoComplete="email"
+             
               autoFocus
             />
             <TextField
@@ -107,36 +127,38 @@ export default function SignIn() {
               label="Password"
               type="password"
               id="password"
+             
               autoComplete="current-password"
-            />
+             
+             />
             <FormControlLabel
-              control={<Checkbox value="remember" color="secondary" />}
+           
+              control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
             <Button
-              type="submit"
+            
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2,background: 'linear-gradient(90deg, rgba(109,29,166,1) 25%, rgba(41,166,195,0.9444152661064426) 100%, rgba(33,9,121,0.36738445378151263) 100%)' }}
+          
             >
         Sign up
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link className='gradient' href="#" variant="body2">
+                <Link className='gradient' to='/' >
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
-                <Link className='gradient' href="#" variant="body2">
-                    
+                <Link className='gradient' to='/sign-up'>
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );

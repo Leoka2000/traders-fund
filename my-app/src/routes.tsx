@@ -1,23 +1,32 @@
-import './App.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import App from './App';
-import Sidenav from './components/sidenav/sidenav';
-import SignIn from './pages/sign-in';
+import { Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import Public from './components/Public'
+import Login from './features/auth/Login'
+import Welcome from './features/auth/Welcome'
+import RequireAuth from './features/auth/RequireAuth'
+import UsersList from './features/users/usersList'
+import Dashboard from './components/sidenav/sidenav'
+import './index.css'
+import PrimarySearchAppBar from './components/newDrawer/newDrawer'
 
-
-
-function RoutesMain() {
+function App() {
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path='/app' element={<App />} />
-          <Route path='/' element={<Sidenav />} />
-          <Route path ='/sign-in' element={ <SignIn/> } />
-        </Routes>
-      </Router>
-    </>
-  );
+    <Routes>
+      
+      <Route path="/" element={<Layout />}>
+      <Route index element={<Dashboard/>} />
+        {/* public routes */}
+        <Route element={<Public />} />
+        <Route path="login" element={<Login />} />
+        {/* protected routes */}
+        <Route element={<RequireAuth />}>
+          <Route path="welcome" element={<Welcome />} />
+          <Route path="userslist" element={<UsersList />} />
+        </Route>
+
+      </Route>
+    </Routes>
+  )
 }
 
-export default RoutesMain;
+export default App;

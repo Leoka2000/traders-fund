@@ -6,9 +6,6 @@ import ListSubheader from '@mui/material/ListSubheader';
 import CheckList from '@mui/icons-material/Approval';
 import SchoolRounded from "@material-ui/icons/SchoolRounded";
 import BorderColorIcon from '@mui/icons-material/BorderColor';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import LayersIcon from '@mui/icons-material/Layers';
-import AssignmentIcon from '@mui/icons-material/Assignment';
 import { Link } from 'react-router-dom';
 import Gavel from '@mui/icons-material/Gavel';
 import WorkOutlineRounded from '@material-ui/icons/WorkOutlineRounded';
@@ -16,11 +13,12 @@ import MonetizationOnRounded from '@material-ui/icons/MonetizationOnRounded';
 import HelpOutlineRounded from '@material-ui/icons/HelpOutlineRounded';
 import { BackspaceIcon } from '@heroicons/react/20/solid';
 import Backspace from '@mui/icons-material/Backspace';
+import './sidenav.css'
 
-export const mainListItems = (
+export const applyFunding = (
   <React.Fragment>
     <Link to='/sheesh'>
-      <ListItemButton>
+      <ListItemButton className='hover'>
         <ListItemIcon>
 
           <CheckList />
@@ -29,42 +27,51 @@ export const mainListItems = (
         <ListItemText primary="Apply for funding" />
       </ListItemButton>
     </Link>
-    <Link to='/'>
-      <ListItemButton>
-        <ListItemIcon>
-          <SchoolRounded />
-        </ListItemIcon>
-        <ListItemText primary="TF University" />
-      </ListItemButton>
-    </Link>
-    <Link to='/'>
-      <ListItemButton>
-        <ListItemIcon>
-          <BorderColorIcon />
-        </ListItemIcon>
-        <ListItemText primary="Tutorials" />
-      </ListItemButton>
-    </Link>
+  </React.Fragment>
+)
+export const tfUniIcon = (
+  <ListItemButton>
+    <ListItemIcon>
+      <SchoolRounded />
+    </ListItemIcon>
+    <ListItemText primary="TF University" />
+  </ListItemButton>
+
+)
+export const tutorials = (
+  <React.Fragment>
+    <ListItemButton>
+      <ListItemIcon>
+        <BorderColorIcon />
+      </ListItemIcon>
+      <ListItemText primary="Tutorials" />
+    </ListItemButton>
+  </React.Fragment>
+)
+export const tradingRules = (
+  <React.Fragment>
+
     <ListItemButton>
       <ListItemIcon>
         <Gavel />
       </ListItemIcon>
       <ListItemText primary="Trading Rules" />
     </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <WorkOutlineRounded />
-      </ListItemIcon>
-      <ListItemText primary="Evaluation" />
-    </ListItemButton>
+
   </React.Fragment>
 );
 
 export const secondaryListItems = (
   <React.Fragment>
     <ListSubheader component="div" inset>
-    Subheader
+      Subheader
     </ListSubheader>
+    <ListItemButton>
+      <ListItemIcon>
+        <WorkOutlineRounded />
+      </ListItemIcon>
+      <ListItemText primary="Evaluation" />
+    </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
         <MonetizationOnRounded />
@@ -79,9 +86,9 @@ export const secondaryListItems = (
     </ListItemButton>
     <ListItemButton >
       <ListItemIcon>
-        <Backspace  />
+        <Backspace />
       </ListItemIcon>
-      <ListItemText  primary="Widthdraw" />
+      <ListItemText primary="Widthdraw" />
     </ListItemButton>
   </React.Fragment>
 );

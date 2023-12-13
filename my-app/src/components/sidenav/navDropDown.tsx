@@ -3,7 +3,7 @@ import { styled, alpha } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Menu, { MenuProps } from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-
+import { tfUniIcon, tutorials, tradingRules } from './sidenavitems';
 import Divider from '@mui/material/Divider';
 import LogoutIcon from '@mui/icons-material/Logout';
 
@@ -11,6 +11,13 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountBoxRounded from '@mui/icons-material/AccountBoxRounded';
+import { Link } from 'react-router-dom';
+import BorderColor from '@mui/icons-material/BorderColor';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import { ListItemAvatar } from '@mui/material';
+import Gavel from '@mui/icons-material/Gavel';
+import SchoolRounded from '@material-ui/icons/SchoolRounded';
+import './sidenav.css'
 
 const StyledMenu = styled((props: MenuProps) => (
   <Menu
@@ -64,29 +71,59 @@ export default function CustomizedMenus() {
   };
 
   return (
-    <div>
+    <nav className='flex justify-center'>
       <Button
+      sx={{background: 'linear-gradient(90deg, rgba(109,29,166,0.8015581232492998) 25%, rgba(41,166,195,0.9164040616246498) 100%, rgba(33,9,121,0.36738445378151263) 100%)'}}
+  
         id="demo-customized-button"
         aria-controls={open ? 'demo-customized-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         variant="contained"
-        disableElevation
-        startIcon={<AssignmentIcon/>}
+      
+      
+        startIcon={<AssignmentIcon />}
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon />}
       >
-        
+
       </Button>
       <StyledMenu
         id="demo-customized-menu"
         MenuListProps={{
           'aria-labelledby': 'demo-customized-button',
         }}
+
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
       >
+        <Link to='/login' onClick={handleClose} >
+          <MenuItem onClick={handleClose} disableRipple>
+            <Gavel />
+            Login
+          </MenuItem>
+        </Link>
+        <Link to='/s' className='flex flex-col' onClick={handleClose} >
+        <MenuItem onClick={handleClose} disableRipple>
+            <SchoolRounded />
+            TF University
+          </MenuItem>
+
+        </Link>
+        <Link to='/sksks' onClick={handleClose} >
+          <MenuItem onClick={handleClose} disableRipple>
+            <Gavel />
+            Trading rules
+          </MenuItem>
+        </Link>
+        <Link to='/sksks' className='flex flex-col' onClick={handleClose} >
+          <MenuItem onClick={handleClose} disableRipple>
+            <BorderColor />
+            Tutorials
+          </MenuItem>
+        </Link>
+        <Divider sx={{ my: 0.5 }} />
         <MenuItem onClick={handleClose} disableRipple>
           <AccountBoxRounded />
           Profile
@@ -97,10 +134,10 @@ export default function CustomizedMenus() {
         </MenuItem>
         <Divider sx={{ my: 0.5 }} />
         <MenuItem onClick={handleClose} disableRipple>
-        <LogoutIcon />
+          <LogoutIcon />
           Log-out
         </MenuItem>
       </StyledMenu>
-    </div>
+    </nav>
   );
 }

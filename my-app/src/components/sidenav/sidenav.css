@@ -4,15 +4,10 @@
     justify-content: flex-start;
    
 }
-.gradient {
-    -webkit-text-fill-color: transparent;
-    background-image: url(../../assets/brand/gradient.png);
-    background-position: 0 0;
-    background-size: cover;
-    -webkit-background-clip: text;
-    background-clip: text;
-   
+.hover:hover {
+    background-color: transparent;
 }
+ 
 .logo-wrapper > img {
 
 object-fit: cover;

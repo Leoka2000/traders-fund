@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "user": "Leo",
+      "token": "askdsadjisaij392839"
+    },
+    {
+      "id": 2,
+      "user": "Enzo",
+      "token": "akdnsaj438"
+    }
+  ],
+  "auth": [
+    {
+      "token": "asidias21328932"
+    }
+  ]
+  ,
+  "refresh": [
+    {
+      "newtoken": "REFRESH NOW!"
+    }
+  ]
+}
