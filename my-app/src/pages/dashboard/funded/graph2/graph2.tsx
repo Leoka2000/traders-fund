@@ -9,8 +9,8 @@ export default function ResponsiveLineChart() {
   const [selectedOption, setSelectedOption] = useState('Day');
 
   const handleDayButtonClick = () => {
-    setData([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
-    setYAxisData([2, 500, 200, 110, 200, 50, 60, 900, 300, 450, 700, 800]);
+    setData([1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]);
+    setYAxisData([2, 500, 200, 110, 200, 50, 60, 900, 300, 450, 700, 800, 900]);
     setSelectedOption('Day');
   };
 
@@ -22,15 +22,15 @@ export default function ResponsiveLineChart() {
 
   const handleMonthlyButtonClick = () => {
     setData([1, 2, 3, 4]);
-    setYAxisData([200, 250, 300, 900]);
+    setYAxisData([400, 250, 300, 900]);
     setSelectedOption('Monthly');
   };
 
   return (
     <div id="chart-container" style={{ width: '100%' }}>
       <header className='flex justify-end'>
-        <Button onClick={handleDayButtonClick}>Hourly</Button>
-        <Button onClick={handleLastHourButtonClick}>Last Hour</Button>
+      <Button onClick={handleLastHourButtonClick}>Last Hour</Button>
+        <Button onClick={handleDayButtonClick}>Last Day</Button>
         <Button onClick={handleMonthlyButtonClick}>Last Month</Button>
       </header>
       <LineChart

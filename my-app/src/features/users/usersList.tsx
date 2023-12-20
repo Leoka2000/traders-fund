@@ -1,4 +1,4 @@
-import { useGetUsersQuery } from "./userApiSlice"
+/*import { useGetUsersQuery } from "./userApiSlice"
 import { Link } from "react-router-dom";
 
 const UsersList = () => {
@@ -8,7 +8,7 @@ const UsersList = () => {
         isSuccess,
         isError,
         error
-    } = useGetUsersQuery()
+    } = useGetUsersQuery({})
 
     let content;
     if (isLoading) {
@@ -32,3 +32,5 @@ const UsersList = () => {
     return content
 }
 export default UsersList
+
+*/

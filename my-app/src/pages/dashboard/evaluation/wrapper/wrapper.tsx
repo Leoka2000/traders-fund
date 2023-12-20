@@ -12,11 +12,11 @@ import IconButton from '@mui/material/IconButton';
 import Container from '@mui/material/Container';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { secondaryListItems, applyFunding } from './sidenavitems';
-import Logo from '../../assets/brand/traderslogo.png'
-import './sidenav.css'
-import Index from '../../pages/dashboard/evaluation/index/index';
-import PrimarySearchAppBar from '../newDrawer/newDrawer';
+import { secondaryListItems, applyFunding } from '../../../../components/sidenav/sidenavitems';
+import Logo from '../../../../assets/brand/traderslogo.png'
+
+import Index from '../index/index';
+import PrimarySearchAppBar from '../../../../components/newDrawer/newDrawer';
 
 const drawerWidth: number = 240;
 
@@ -100,7 +100,7 @@ const darkTheme = createTheme({
   },
 });
 
-export default function Dashboard() {
+export default function IndexEvaluation() {
   const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -139,7 +139,7 @@ export default function Dashboard() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                Dashboard
+                Evaluation
               </Typography>
               <PrimarySearchAppBar/>
             </Toolbar>

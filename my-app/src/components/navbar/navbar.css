@@ -26,7 +26,7 @@ nav > div > button {
     background-color: rgb(37, 37, 37); 
 }
 nav > div > button:hover, nav > div> button:hover {
-    background-color: rgb(34, 34, 34);
+    background-color: #222222;
 }
 .dropdown-custom {
     

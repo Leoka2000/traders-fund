@@ -7,16 +7,17 @@ import { Provider } from 'react-redux'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import { store } from './features/app/store.ts'
+// import { store } from './features/app/store.ts'
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Provider store={store}>
+    {/* <Provider store={store}> */}
       <BrowserRouter>
         <Routes>
           <Route path="/*" element={<RoutesMain />} />
         </Routes>
       </BrowserRouter>
-    </Provider>
+    {/* </Provider> */}
   </React.StrictMode>,
 )

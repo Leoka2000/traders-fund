@@ -11,15 +11,14 @@ import Gavel from '@mui/icons-material/Gavel';
 import WorkOutlineRounded from '@material-ui/icons/WorkOutlineRounded';
 import MonetizationOnRounded from '@material-ui/icons/MonetizationOnRounded';
 import HelpOutlineRounded from '@material-ui/icons/HelpOutlineRounded';
-import { BackspaceIcon } from '@heroicons/react/20/solid';
 import Backspace from '@mui/icons-material/Backspace';
 import './sidenav.css'
 
 export const applyFunding = (
   <React.Fragment>
-    <Link to='/sheesh'>
-      <ListItemButton className='hover'>
-        <ListItemIcon>
+    <Link to='/create-account'>
+      <ListItemButton sx={{ paddingLeft: '1.35rem' }} className='hover'>
+        <ListItemIcon sx={{ color: '#c0c0c3;' }}>
 
           <CheckList />
 
@@ -31,7 +30,7 @@ export const applyFunding = (
 )
 export const tfUniIcon = (
   <ListItemButton>
-    <ListItemIcon>
+    <ListItemIcon sx={{ color: '#c0c0c3;' }}>
       <SchoolRounded />
     </ListItemIcon>
     <ListItemText primary="TF University" />
@@ -41,7 +40,7 @@ export const tfUniIcon = (
 export const tutorials = (
   <React.Fragment>
     <ListItemButton>
-      <ListItemIcon>
+      <ListItemIcon sx={{ color: '#c0c0c3;' }}>
         <BorderColorIcon />
       </ListItemIcon>
       <ListItemText primary="Tutorials" />
@@ -52,7 +51,7 @@ export const tradingRules = (
   <React.Fragment>
 
     <ListItemButton>
-      <ListItemIcon>
+      <ListItemIcon sx={{ color: '#c0c0c3;' }}>
         <Gavel />
       </ListItemIcon>
       <ListItemText primary="Trading Rules" />
@@ -66,30 +65,37 @@ export const secondaryListItems = (
     <ListSubheader component="div" inset>
       Subheader
     </ListSubheader>
-    <ListItemButton>
-      <ListItemIcon>
-        <WorkOutlineRounded />
-      </ListItemIcon>
-      <ListItemText primary="Evaluation" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <MonetizationOnRounded />
-      </ListItemIcon>
-      <ListItemText primary="Funded trainig" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
+    <Link to='/'>
+      <ListItemButton sx={{ paddingLeft: '1.35rem' }}>
+        <ListItemIcon sx={{ color: '#c0c0c3;' }}>
+          <WorkOutlineRounded />
+        </ListItemIcon>
+        <ListItemText primary="Evaluation" />
+      </ListItemButton>
+    </Link>
+    <Link to='/funded-training'>
+      <ListItemButton sx={{ paddingLeft: '1.35rem' }}>
+        <ListItemIcon sx={{ color: '#c0c0c3;' }}>
+          <MonetizationOnRounded />
+        </ListItemIcon>
+        <ListItemText primary="Funded trainig" />
+      </ListItemButton>
+    </Link>
+    <Link to='/withdraw'>
+      <ListItemButton sx={{ paddingLeft: '1.35rem' }} >
+        <ListItemIcon sx={{ color: '#c0c0c3;' }}>
+          <Backspace />
+        </ListItemIcon>
+        <ListItemText primary="Widthdraw" />
+      </ListItemButton>
+    </Link>
+    <ListItemButton sx={{ paddingLeft: '1.35rem' }}>
+      <ListItemIcon sx={{ color: '#c0c0c3;' }}>
         <HelpOutlineRounded />
       </ListItemIcon>
       <ListItemText primary="Help" />
     </ListItemButton>
-    <ListItemButton >
-      <ListItemIcon>
-        <Backspace />
-      </ListItemIcon>
-      <ListItemText primary="Widthdraw" />
-    </ListItemButton>
+
   </React.Fragment>
 );
 

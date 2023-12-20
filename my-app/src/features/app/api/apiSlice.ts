@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+/*import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { setCredentials, logOut } from '../../auth/authSlice'
 
 interface baseQueryProps {
@@ -48,3 +48,5 @@ export const apiSlice = createApi({
     baseQuery: baseQueryWithReauth,
     endpoints: builder => ({})
 })
+
+*/

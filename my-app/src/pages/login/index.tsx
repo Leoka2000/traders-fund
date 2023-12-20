@@ -11,7 +11,7 @@ import {useForm} from 'react-hook-form'
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {useLoginMutation} from '../../features/auth/authApiSlice'
+// import {useLoginMutation} from '../../features/auth/authApiSlice'
 import Logo from '../../assets/brand/traderslogo.png'
 import './index.css'
 import { useDispatch } from 'react-redux';
@@ -53,14 +53,14 @@ export default function SignIn() {
  const [user, setUser] = useState<string>('')
  const [pwd, setpwd] = useState<string>('')
  const [errMsg, setErrMsg] = useState<string>('')
- const navigate = useNavigate<any>()
-const [login, {isLoading}] = useLoginMutation()
+//  const navigate = useNavigate<any>()
+// const [login, {isLoading}] = useLoginMutation()
 const dispatch = useDispatch()
 
 useEffect(() => {
 setErrMsg('')
 }, [user, pwd])
-
+/*
 const handleSubmit = async (e) => {
   e.preventDeafult()
   
@@ -84,7 +84,7 @@ const handleSubmit = async (e) => {
     errRef.current.focus()
   }
 }
-
+*/
 
   return (
     <ThemeProvider theme={darkTheme}>

@@ -3,7 +3,6 @@ import { styled, alpha } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Menu, { MenuProps } from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { tfUniIcon, tutorials, tradingRules } from './sidenavitems';
 import Divider from '@mui/material/Divider';
 import LogoutIcon from '@mui/icons-material/Logout';
 
@@ -13,8 +12,6 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import AccountBoxRounded from '@mui/icons-material/AccountBoxRounded';
 import { Link } from 'react-router-dom';
 import BorderColor from '@mui/icons-material/BorderColor';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import { ListItemAvatar } from '@mui/material';
 import Gavel from '@mui/icons-material/Gavel';
 import SchoolRounded from '@material-ui/icons/SchoolRounded';
 import './sidenav.css'
