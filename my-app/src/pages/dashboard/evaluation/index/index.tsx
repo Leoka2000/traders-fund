@@ -1,10 +1,11 @@
 import { Grid, Paper, Typography } from '@mui/material';
 import React from 'react'
-import Chart from '../graphic';
+
 import Deposits from '../details';
 import CustomizedTables from '../challenges/index'
 import { Link } from 'react-router-dom';
 import BasicLineChart from '../../funded/graph2/graph2';
+import ScrollableTabsButtonPrevent from '../../funded/tabs/tabs'
 
 type Props = {}
 
@@ -26,6 +27,11 @@ const Index = (props: Props) => {
   return (
     <React.Fragment>
        <Grid container spacing={3}>
+       <Grid item xs={12} md={8} lg={20}>
+          <Paper sx={{ display: 'flex', justifyContent: 'center' }}>
+            <ScrollableTabsButtonPrevent />
+          </Paper>
+        </Grid>
 <Grid item xs={12} md={8} lg={9}>
 
   <Paper

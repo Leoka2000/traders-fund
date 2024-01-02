@@ -10,15 +10,14 @@ export default function AccountType(
   { evaluationTypeProps, setEvaluationTypeProps }
 ) {
 
-  const [alignment, setAlignment] = React.useState('web');
+  const [alignment, setAlignment] = React.useState('One step');
 
   const handleChange = (
-    event: React.MouseEvent<HTMLElement>,
+    _event: React.MouseEvent<HTMLElement>,
     newAlignment: string,
-    
   ) => {
     setAlignment(newAlignment);
-    setEvaluationTypeProps(event.target.value)
+    setEvaluationTypeProps(newAlignment); // Assuming you want to set the newAlignment value
   };
 
   return (
@@ -41,21 +40,21 @@ export default function AccountType(
             <p className='text-base font-light lowercase'>Pass a one step evaluation challange and get funded in 30 days</p>
           </div>
           <ul className='flex flex-col items-start w-full'>
-            <li className='text-base font-size lowercase'>- 75% Profit split</li>
-            <li className='text-base font-size lowercase'>- 3 month evaluation period</li>
-            <li className='text-base font-size lowercase'>- Weekly withdrawals</li>
-            <li className='text-base font-size lowercase'>- Trade stocks, commodities, crypto and more</li>
+            <li className='text-base lowercase font-size'>- 75% Profit split</li>
+            <li className='text-base lowercase font-size'>- 3 month evaluation period</li>
+            <li className='text-base lowercase font-size'>- Weekly withdrawals</li>
+            <li className='text-base lowercase font-size'>- Trade stocks, commodities, crypto and more</li>
           </ul>
         </div>
         <div className='flex flex-col p-3'> <div className='flex flex-col items-start pb-3'>
-          <p className='text-lg  font-medium lowercase'>Two step</p>
+          <p className='text-lg font-medium lowercase'>Two step</p>
           <p className='text-base font-light lowercase'>Pass our two step evaluation challange and maximise your profits.</p>
         </div>
           <ul className='flex flex-col items-start w-full'>
-            <li className='text-base font-size lowercase'>- 85% Profit split</li>
-            <li className='text-base font-size lowercase'>- 2x3 month evaluation period</li>
-            <li className='text-base font-size lowercase'>- Weekly withdrawals</li>
-            <li className='text-base font-size lowercase'>- Trade stocks, commodities, crypto and more</li>
+            <li className='text-base lowercase font-size'>- 85% Profit split</li>
+            <li className='text-base lowercase font-size'>- 2x3 month evaluation period</li>
+            <li className='text-base lowercase font-size'>- Weekly withdrawals</li>
+            <li className='text-base lowercase font-size'>- Trade stocks, commodities, crypto and more</li>
           </ul>
         </div>
       </div>
@@ -80,23 +79,23 @@ export default function AccountType(
             <p className='text-base font-light lowercase'>Pass a one step evaluation challange and get funded in 30 days</p>
           </div>
           <ul className='flex flex-col items-start w-full'>
-            <li className='text-base font-size lowercase'>- 75% Profit split</li>
-            <li className='text-base font-size lowercase'>- 3 month evaluation period</li>
-            <li className='text-base font-size lowercase'>- Weekly withdrawals</li>
-            <li className='text-base font-size lowercase'>- Trade stocks, commodities, crypto and more</li>
+            <li className='text-base lowercase font-size'>- 75% Profit split</li>
+            <li className='text-base lowercase font-size'>- 3 month evaluation period</li>
+            <li className='text-base lowercase font-size'>- Weekly withdrawals</li>
+            <li className='text-base lowercase font-size'>- Trade stocks, commodities, crypto and more</li>
           </ul>
         </ToggleButton>
         <Divider />
         <ToggleButton sx={{ display: 'flex', flexDirection: 'column' }} value="Two step" aria-label="module">
           <div className='flex flex-col items-start pb-3'>
-            <p className='text-lg  font-medium lowercase'>Two step</p>
+            <p className='text-lg font-medium lowercase'>Two step</p>
             <p className='text-base font-light lowercase'>Pass our two step evaluation challange and maximise your profits.</p>
           </div>
           <ul className='flex flex-col items-start w-full'>
-            <li className='text-base font-size lowercase'>- 85% Profit split</li>
-            <li className='text-base font-size lowercase'>- 2x3 month evaluation period</li>
-            <li className='text-base font-size lowercase'>- Weekly withdrawals</li>
-            <li className='text-base font-size lowercase'>- Trade stocks, commodities, crypto and more</li>
+            <li className='text-base lowercase font-size'>- 85% Profit split</li>
+            <li className='text-base lowercase font-size'>- 2x3 month evaluation period</li>
+            <li className='text-base lowercase font-size'>- Weekly withdrawals</li>
+            <li className='text-base lowercase font-size'>- Trade stocks, commodities, crypto and more</li>
           </ul>
         </ToggleButton>
         <Divider />

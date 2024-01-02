@@ -28,22 +28,25 @@ export default function ResponsiveLineChart() {
 
   return (
     <div id="chart-container" style={{ width: '100%' }}>
-      <header className='flex justify-end'>
-      <Button onClick={handleLastHourButtonClick}>Last Hour</Button>
+      <header className='flex justify-end overflow-hidden'>
+      <Button  onClick={handleLastHourButtonClick}>Last Hour</Button>
         <Button onClick={handleDayButtonClick}>Last Day</Button>
         <Button onClick={handleMonthlyButtonClick}>Last Month</Button>
       </header>
       <LineChart
         xAxis={[{
-          data: data,
+            data: data,  
         }]}
         series={[
           {
             data: yAxisData,
+            label: 'P&L%',
+      
           },
         ]}
         className='w-full'
         height={330}
+
       />
 
     </div>

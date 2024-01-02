@@ -1,5 +1,5 @@
 import { Button, Divider, Grid, Paper, Typography } from '@mui/material';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Form from '../form/form';
 import InteractiveLogo from '../interactiveLogo/interactiveLogo';
 import FormDialog from '../submit/submit';
@@ -12,8 +12,59 @@ const IndexCreateAccount = () => {
   const [accountSize, setAccountSize] = useState<number>(2000);
   const [evaluationType, setEvaluationType] = useState<string>('One step');
   const [toggleSelect, setToggleSelect] = useState('')
+  const [updatedAccountSize, setUpdatedAccountSize] = useState('')
+  const [updatedFee, setUpdatedFee] = useState('')
+
+  useEffect(() => {
+    if (accountSize === 2000) {
+      setUpdatedAccountSize('$2,500');
+    } else if (accountSize === 5000) {
+      setUpdatedAccountSize('$5,000');
+    } else if (accountSize === 10000) {
+      setUpdatedAccountSize('$10,000');
+    } else if (accountSize === 25000) {
+      setUpdatedAccountSize('$25,000');
+    } else if (accountSize === 100000) {
+      setUpdatedAccountSize('$100,000');
+    } else if (accountSize === 200000) {
+      setUpdatedAccountSize('$200,000');
+    }
+  }, [accountSize]);
 
 
+  const handleFeeUpdate = (accountSize, evaluationType) => {
+    if (accountSize === 2000 && evaluationType === 'One step') {
+      setUpdatedFee('$90');
+    } else if (accountSize === 2000 && evaluationType === 'Two step') {
+      setUpdatedFee('$50');
+    } else if (accountSize === 5000 && evaluationType === 'One step') {
+      setUpdatedFee('$145');
+    } else if (accountSize === 5000 && evaluationType === 'Two step') {
+      setUpdatedFee('$100');
+    } else if (accountSize === 10000 && evaluationType === 'One step') {
+      setUpdatedFee('$350');
+    } else if (accountSize === 10000 && evaluationType === 'Two step') {
+      setUpdatedFee('$200');
+    } else if (accountSize === 25000 && evaluationType === 'One step') {
+      setUpdatedFee('$500');
+    } else if (accountSize === 25000 && evaluationType === 'Two step') {
+      setUpdatedFee('$400');
+    } else if (accountSize === 100000 && evaluationType === 'One step') {
+      setUpdatedFee('$950');
+    } else if (accountSize === 100000 && evaluationType === 'Two step') {
+      setUpdatedFee('$750');
+    } else if (accountSize === 200000 && evaluationType === 'One step') {
+      setUpdatedFee('$1,850');
+    } else if (accountSize === 200000 && evaluationType === 'Two step') {
+      setUpdatedFee('$1,200');
+    } else {
+      setUpdatedFee('');
+    }
+  };
+  
+  useEffect(() => {
+    handleFeeUpdate(accountSize, evaluationType);
+  }, [accountSize, evaluationType]);
 
   return (
     <React.Fragment>
@@ -54,20 +105,7 @@ const IndexCreateAccount = () => {
             <div>
               <div className='flex justify-between mb-1'>
                 <p>Trading capital:</p>
-                {accountSize === 2000 ? (
-                  <p className='font-extrabold'>$2,000</p>
-                ) : accountSize === 5000 ? (
-                  <p className='font-extrabold'>$5,000</p>
-                ) : accountSize === 10000 ? (
-                  <p className='font-extrabold'>$10,000</p>
-                ) : accountSize === 25000 ? (
-                  <p className='font-extrabold'>$25,000</p>
-                ) : accountSize === 100000 ? (
-                  <p className='font-extrabold'>$100,000</p>
-                ) : accountSize === 200000 ? (
-                  <p className='font-extrabold'>$200,000</p>
-                ) :
-                  <p></p>}
+                <p>{updatedAccountSize}</p>
               </div>
               <div className='flex justify-between mb-1'>
                 <p>Evaluation type:</p>
@@ -126,48 +164,11 @@ const IndexCreateAccount = () => {
               </div>
               <div className='flex justify-between mb-1'>
                 <p>One time fee:</p>
-                {accountSize === 2000 && evaluationType === 'One step' ? (
-                  <p className='font-extrabold'>$90</p>
-                ) : accountSize === 2000 && evaluationType === 'Two step' ? (
-                  <p className='font-extrabold'>$50</p>
-                ) :
-                  accountSize === 5000 && evaluationType === 'One step' ? (
-                    <p className='font-extrabold'>$145</p>
-                  ) :
-                    accountSize === 5000 && evaluationType === 'Two step' ? (
-                      <p className='font-extrabold'>$100</p>
-                    ) :
-                      accountSize === 10000 && evaluationType === 'One step' ? (
-                        <p className='font-extrabold'>$350</p>
-                      ) :
-                        accountSize === 10000 && evaluationType === 'Two step' ? (
-                          <p className='font-extrabold'>$200</p>
-                        ) :
-                          accountSize === 25000 && evaluationType === 'One step' ? (
-                            <p className='font-extrabold'>$500</p>
-                          ) :
-                            accountSize === 25000 && evaluationType === 'Two step' ? (
-                              <p className='font-extrabold'>$400</p>
-                            ) :
-                              accountSize === 100000 && evaluationType === 'One step' ? (
-                                <p className='font-extrabold'>$950</p>
-                              ) :
-                                accountSize === 100000 && evaluationType === 'Two step' ? (
-                                  <p className='font-extrabold'>$750</p>
-                                ) :
-                                  accountSize === 200000 && evaluationType === 'One step' ? (
-                                    <p className='font-extrabold'>$1,850</p>
-                                  ) :
-                                    accountSize === 200000 && evaluationType === 'Two step' ? (
-                                      <Typography noWrap className='font-extrabold'>$1,200</Typography>
-                                    ) : <p></p>}
+               <p>{updatedFee}</p>
               </div>
             </div>
-
             <FormDialog  onAccountSize={accountSize} />
-
           </Paper>
-
         </Grid>
       </Grid>
     </React.Fragment>

@@ -9,6 +9,7 @@ import BasicTable from '../details/details';
 import PieColor from '../pie/pie';
 import ScrollableTabsButtonPrevent from '../tabs/tabs';
 import AccountInformation from '../accountInformation/accountInformation';
+import ResponsiveLineChart from '../graph2/graph2';
 
 type Props = {}
 
@@ -45,8 +46,7 @@ const IndexFunded = (props: Props) => {
             height: 400,
             justifyContent: 'center'
           }}>
-            <TickNumber />
-
+            <ResponsiveLineChart/>
 
           </Paper>
         </Grid>

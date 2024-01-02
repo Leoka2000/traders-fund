@@ -30,7 +30,7 @@ export default function FormDialog({onAccountSize}) {
             Amount to pay:
           </DialogContentText>
           <DialogContentText>
-           {onAccountSize}
+           x
           </DialogContentText>
           {/* 
           <TextField

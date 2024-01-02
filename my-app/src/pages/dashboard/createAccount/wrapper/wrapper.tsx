@@ -13,7 +13,7 @@ import Container from '@mui/material/Container';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { secondaryListItems, applyFunding } from '../../../../components/sidenav/sidenavitems';
-import Logo from '../../../../assets/brand/traderslogo.png'
+import Logo from '../../../../assets/brand/logoNew.png'
 import PrimarySearchAppBar from '../../../../components/newDrawer/newDrawer';
 import IndexCreateAccount from '../index/index';
 

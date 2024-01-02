@@ -17,8 +17,8 @@ import './sidenav.css'
 export const applyFunding = (
   <React.Fragment>
     <Link to='/create-account'>
-      <ListItemButton sx={{ paddingLeft: '1.35rem' }} className='hover'>
-        <ListItemIcon sx={{ color: '#c0c0c3;' }}>
+      <ListItemButton className='pad-custom'>
+        <ListItemIcon sx={{ color: '#c0c0c3'}}>
 
           <CheckList />
 
@@ -66,7 +66,7 @@ export const secondaryListItems = (
       Subheader
     </ListSubheader>
     <Link to='/'>
-      <ListItemButton sx={{ paddingLeft: '1.35rem' }}>
+      <ListItemButton >
         <ListItemIcon sx={{ color: '#c0c0c3;' }}>
           <WorkOutlineRounded />
         </ListItemIcon>
@@ -74,22 +74,23 @@ export const secondaryListItems = (
       </ListItemButton>
     </Link>
     <Link to='/funded-training'>
-      <ListItemButton sx={{ paddingLeft: '1.35rem' }}>
+      <ListItemButton>
         <ListItemIcon sx={{ color: '#c0c0c3;' }}>
-          <MonetizationOnRounded />
+          <MonetizationOnRounded  />
         </ListItemIcon>
         <ListItemText primary="Funded trainig" />
       </ListItemButton>
     </Link>
     <Link to='/withdraw'>
-      <ListItemButton sx={{ paddingLeft: '1.35rem' }} >
+      <ListItemButton>
         <ListItemIcon sx={{ color: '#c0c0c3;' }}>
           <Backspace />
         </ListItemIcon>
         <ListItemText primary="Widthdraw" />
       </ListItemButton>
     </Link>
-    <ListItemButton sx={{ paddingLeft: '1.35rem' }}>
+    <ListItemButton
+    >
       <ListItemIcon sx={{ color: '#c0c0c3;' }}>
         <HelpOutlineRounded />
       </ListItemIcon>

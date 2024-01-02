@@ -1,4 +1,53 @@
+
+
 import * as React from 'react';
+import Link from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
+import { DialogTitle } from '@mui/material';
+
+
+function preventDefault(event: React.MouseEvent) {
+  event.preventDefault();
+}
+
+export default function Deposits() {
+  return (
+    <React.Fragment>
+        
+      <Typography sx={{fontWeight:'600'}} color={'primary'} noWrap>Evaluation details</Typography>
+      <Typography noWrap component="p" variant="h4">
+        One step
+      </Typography>
+      <Typography noWrap color="grey" sx={{ flex: 1,marginBottom:"0.5rem" }}>
+        Type
+      </Typography>
+      <Typography noWrap  component="p" variant="h4">
+      $2,000
+      </Typography>
+      <Typography noWrap color="grey" sx={{ flex: 1,marginBottom:"0.5rem" }}>
+        Funding
+      </Typography>
+      <Typography noWrap component="p" variant="h4">
+     27 days left
+      </Typography>
+      <Typography noWrap color="grey" sx={{ flex: 1,marginBottom:"0.5rem" }}>
+       Trading days
+      </Typography>
+      <Typography noWrap component="p" variant="h4">
+    Challenge <p className='text-green-600'>passed</p>
+      </Typography>
+      <Typography noWrap color="grey" sx={{ flex: 1,marginBottom:"0.5rem" }}>
+       Status
+      </Typography>
+      
+      <div>
+        
+      </div>
+    </React.Fragment>
+  );
+}
+
+/*import * as React from 'react';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Title from '../../title/title';
@@ -23,7 +72,7 @@ export default function Deposits() {
             </div>
             
             <div>
-                <hr className='mb-2 mt-2 bg-neutral-900 border-neutral-700'></hr>
+                <hr className='mt-2 mb-2 bg-neutral-900 border-neutral-700'></hr>
             </div>
             <div className='flex'>
                 <Typography sx={{ flex: 1, fontSize:'0.9rem' }}>
@@ -34,7 +83,7 @@ export default function Deposits() {
                 </Typography>
             </div>
             <div>
-                <hr className='mb-2 mt-2 bg-neutral-900 border-neutral-700'></hr>
+                <hr className='mt-2 mb-2 bg-neutral-900 border-neutral-700'></hr>
             </div>
             <div className='flex'>
                 <Typography sx={{ flex: 1, fontSize:'0.9rem' }}>
@@ -46,7 +95,7 @@ export default function Deposits() {
             </div>
           
             <div>
-                <hr className='mb-2 mt-2 bg-neutral-900 border-neutral-700'></hr>
+                <hr className='mt-2 mb-2 bg-neutral-900 border-neutral-700'></hr>
             </div>
         
             <div className='flex'>
@@ -62,3 +111,5 @@ export default function Deposits() {
         </React.Fragment>
     );
 }
+
+*/

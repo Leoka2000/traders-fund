@@ -4,34 +4,34 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { PieChart } from '@mui/x-charts/PieChart';
 
-const pieParams = { height: 200, margin: { right: 5 } };
-const palette = ['grey', 'white', 'darkgrey'];
+const pieParams = { height: 200};
+const palette = ['cyan', 'white', 'black'];
 
 export default function PieColor() {
   return (
-    <Stack direction="row" width="100%" textAlign="center" spacing={2}>
+    <Stack direction="row" width="100%" textAlign="center" >
       <Box flexGrow={1}>
-        <Typography className='gradient' sx={{fontWeight:'900', fontSize:'1.05rem', letterSpacing:'0.6px'}}>Asset class</Typography>
+       
         <PieChart
          colors={palette}
-          series={[{ data: [{ value: 10 }, { value: 15 }, { value: 20 }] }]}
+          series={[{ data: [{ value: 10,  label:'label 1' }, { value: 15,  label:'label 2' }, { value: 20,  label:'label 3' }] }]}
           {...pieParams}
         />
       </Box>
       <Box flexGrow={1}>
-        <Typography className='gradient' sx={{fontWeight:'900', fontSize:'1.05rem', letterSpacing:'0.6px'}}>Industry</Typography>
+
         <PieChart
           colors={palette}
-          series={[{ data: [{ value: 30 }, { value: 15 }, { value: 20 }] }]}
+          series={[{ data: [{ value: 30,  label:'label 1' }, { value: 15,  label:'label 2' }, { value: 20,  label:'label 3' }] }]}
           {...pieParams}
         />
       </Box>
       <Box flexGrow={1}>
-        <Typography className='gradient' sx={{fontWeight:'900', fontSize:'1.05rem', letterSpacing:'0.6px'}}>Currency</Typography>
+
         <PieChart
          colors={palette}
           series={[
-            { data: [{ value: 2 }, { value: 9 }, { value: 20 }] },
+            { data: [{ value: 2, label:'label 1' }, { value: 9,  label:'label 2' }, { value: 20,  label:'label 3' }] },
           ]}
           {...pieParams}
         />

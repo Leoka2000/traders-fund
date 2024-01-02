@@ -13,8 +13,7 @@ import Container from '@mui/material/Container';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { secondaryListItems, applyFunding } from '../../../../components/sidenav/sidenavitems';
-import Logo from '../../../../assets/brand/traderslogo.png'
-
+import Logo from '../../../../assets/brand/logoNew.png'
 import Index from '../index/index';
 import PrimarySearchAppBar from '../../../../components/newDrawer/newDrawer';
 
@@ -125,7 +124,7 @@ export default function IndexEvaluation() {
                 aria-label="open drawer"
                 onClick={toggleDrawer}
                 sx={{
-                  marginRight: '36px',
+                 
                   ...(open && { display: 'none' }),
                 }}
               >
@@ -161,7 +160,7 @@ export default function IndexEvaluation() {
             </Toolbar>
             <Divider />
             <List component="nav">
-              <div className="logo-wrapper flex justify-center pt-2 pb-2">
+              <div className="flex justify-center pt-2 pb-2 logo-wrapper">
                 <div><img src={Logo} /></div>
               </div>
               {applyFunding}
