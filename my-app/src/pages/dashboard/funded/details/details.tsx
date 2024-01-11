@@ -31,12 +31,13 @@ export default function BasicTable() {
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell sx={{fontWeight:'900', fontSize:'1.05rem', letterSpacing:'0.6px'}} className='gradient'>Portfolio overview</TableCell>
-            <TableCell sx={{fontWeight:'900', fontSize:'1.05rem', letterSpacing:'0.6px'}} className='gradient' align="right">Your details</TableCell>
+            <TableCell sx={{fontWeight:'900', fontSize:'1.05rem', letterSpacing:'0.6px', color:"#8BC8CCff"}} >Portfolio overview</TableCell>
+            <TableCell sx={{fontWeight:'900', fontSize:'1.05rem', letterSpacing:'0.6px', color:"#8BC8CCff"}} align="right">Your details</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
+
             <TableRow
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

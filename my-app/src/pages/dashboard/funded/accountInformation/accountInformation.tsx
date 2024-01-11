@@ -30,8 +30,8 @@ export default function AccountInformation() {
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell sx={{fontWeight:'900', fontSize:'1.05rem', letterSpacing:'0.6px'}} className='gradient'>Account information</TableCell>
-            <TableCell align="right" sx={{fontWeight:'900', fontSize:'1.05rem', letterSpacing:'0.6px'}} className='gradient'>Your details</TableCell>
+            <TableCell sx={{fontWeight:'900', fontSize:'1.05rem', letterSpacing:'0.6px', color:"#8BC8CCff"}}>Account information</TableCell>
+            <TableCell align="right" sx={{fontWeight:'900', fontSize:'1.05rem', letterSpacing:'0.6px', color:"#8BC8CCff"}}>Your details</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

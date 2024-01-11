@@ -74,7 +74,7 @@ const darkTheme = createTheme({
     mode: 'dark',
 
     primary: {
-      main: '#3f51b5',
+      main: '#8BC8CCff',
       light: '#607d8b',
       dark: '#212121',
     },
@@ -160,7 +160,7 @@ export default function WrapperCreateAcount() {
             </Toolbar>
             <Divider />
             <List component="nav">
-              <div className="logo-wrapper flex justify-center pt-2 pb-2">
+              <div className="flex justify-center pt-2 pb-2 logo-wrapper">
                 <div><img src={Logo} /></div>
               </div>
               {applyFunding}

@@ -1,60 +1,53 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
+import React, { useState } from 'react';
+import Stack from '@mui/material/Stack';
 import { LineChart } from '@mui/x-charts/LineChart';
+import { Button } from '@mui/material';
 
-const timeData = [
-  new Date(2023, 7, 31),
-  new Date(2023, 7, 31, 12),
-  new Date(2023, 8, 1),
-  new Date(2023, 8, 1, 12),
-  new Date(2023, 8, 2),
-  new Date(2023, 8, 2, 12),
-  new Date(2023, 8, 3),
-  new Date(2023, 8, 3, 12),
-  new Date(2023, 8, 4),
-];
 
-const y1 = [5, 5, 10, 90, 85, 70, 30, 25, 25];
-const y2 = [90, 85, 70, 25, 23, 40, 45, 40, 50];
 
-const valueFormatter = (date: Date) =>
-  date.getHours() === 0
-    ? date.toLocaleDateString('fr-FR', {
-        month: '2-digit',
-        day: '2-digit',
-      })
-    : date.toLocaleTimeString('fr-FR', {
-        hour: '2-digit',
-      });
+export default function LineChartConnectNulls() {
+  const [data, setData] = useState([4000, 3000, 2000, 1499, 1890, 2390]);
+  const [xData, setXData] = useState(['Minute 10', 'Minute 20', 'Minute 30', 'Minute 40', 'Minute 50', 'Minute 60']);
+  const [selectedOption, setSelectedOption] = useState('Last Hour');
 
-const config = {
-  series: [{ data: y1 }, { data: y2 }],
-  height: 300,
-  topAxis: 'half days',
-  leftAxis: null,
-};
-const xAxisCommon = {
-  data: timeData,
-  scaleType: 'time',
-  valueFormatter,
-} as const;
-export default function TickNumber() {
+
+  const handleLastHourButtonClick = () => {
+    setData([4000, 3000, 2000, 1499, 1890, 2390]);
+    setXData(['Minute 10', 'Minute 20', 'Minute 30', 'Minute 40', 'Minute 50', 'Minute 60']);
+    setSelectedOption('Last Hour');
+  };
+  
+  const handleDayButtonClick = () => {
+    setData([4000, 3000, 2000, 3000, 1890, 239]);
+    setXData(['4 Hour', '8 Hour', '12 Hour', '16 Hour', '20 Hour', '24 Hour']);
+    setSelectedOption('Day');
+  };
+
+  const handleMonthlyButtonClick = () => {
+    setData([1002, 300, 700, 400]);
+    setXData(['1st Week', '2nd Week', '3rd Week', '4th Week']);
+    setSelectedOption('Monthly');
+  };
+  const handleYearlyButtonClick = () => {
+    setData([1002, 300, 700, 500, 1002, 300, 700, 300, 1002, 300, 700, 100]);
+    setXData(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
+    setSelectedOption('Monthly');
+  };
+
   return (
-    <Box sx={{ width: '100%', maxWidth: 800 }}>
+    <Stack sx={{ width: '100%', height:'100%' }}>
+      <header className='flex justify-end overflow-hidden'>
+        <Button onClick={handleLastHourButtonClick}>Hour</Button>
+        <Button onClick={handleDayButtonClick}>Day</Button>
+        <Button onClick={handleMonthlyButtonClick}>Month</Button>
+        <Button onClick={handleYearlyButtonClick}>Year</Button>
+      </header>
       <LineChart
-        xAxis={[
-          {
-            ...xAxisCommon,
-            tickMinStep: 3600 * 1000 * 24, // min step: 24h
-          },
-          {
-            ...xAxisCommon,
-            id: 'half days',
-            tickMinStep: 3600 * 1000 * 12, // min step: 12hu
-          },
-        ]}
-        {...config}
+        xAxis={[{ data: xData, scaleType: 'point' }]}
+        series={[{ data, label: 'PnL%' }]}
+       sx={{height:'100%'}}
+
       />
-    </Box>
+    </Stack>
   );
 }

@@ -10,6 +10,7 @@ import PieColor from '../pie/pie';
 import ScrollableTabsButtonPrevent from '../tabs/tabs';
 import AccountInformation from '../accountInformation/accountInformation';
 import ResponsiveLineChart from '../graph2/graph2';
+import LineChartConnectNulls from '../graph/graph';
 
 type Props = {}
 
@@ -46,7 +47,7 @@ const IndexFunded = (props: Props) => {
             height: 400,
             justifyContent: 'center'
           }}>
-            <ResponsiveLineChart/>
+            <LineChartConnectNulls/>
 
           </Paper>
         </Grid>
