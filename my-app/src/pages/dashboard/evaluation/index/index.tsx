@@ -4,8 +4,9 @@ import React from 'react'
 import Deposits from '../details';
 import CustomizedTables from '../challenges/index'
 import { Link } from 'react-router-dom';
-import BasicLineChart from '../../funded/graph2/graph2';
+import BasicLineChart from '../../funded/graphEvaluation/graph2';
 import ScrollableTabsButtonPrevent from '../../funded/tabs/tabs'
+import LineChartConnectNulls from '../../funded/graphEvaluation/graph2';
 
 type Props = {}
 
@@ -44,7 +45,7 @@ const Index = (props: Props) => {
     }}
   >
     {/* <FloatingActionButtonZoom /> */}
-    <BasicLineChart />
+    < LineChartConnectNulls/>
   </Paper>
 </Grid>
 

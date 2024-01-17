@@ -65,7 +65,7 @@ export const secondaryListItems = (
     <ListSubheader component="div" inset>
       Subheader
     </ListSubheader>
-    <Link to='/'>
+    <Link to='/evaluation'>
       <ListItemButton >
         <ListItemIcon sx={{ color: '#c0c0c3;' }}>
           <WorkOutlineRounded />
@@ -96,7 +96,6 @@ export const secondaryListItems = (
       </ListItemIcon>
       <ListItemText primary="Help" />
     </ListItemButton>
-
   </React.Fragment>
 );
 

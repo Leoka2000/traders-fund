@@ -14,7 +14,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 // import {useLoginMutation} from '../../features/auth/authApiSlice'
 import Logo from '../../assets/brand/traderslogo.png'
 import './index.css'
-import { useDispatch } from 'react-redux';
 
 const darkTheme = createTheme({
 
@@ -55,7 +54,7 @@ export default function SignIn() {
  const [errMsg, setErrMsg] = useState<string>('')
 //  const navigate = useNavigate<any>()
 // const [login, {isLoading}] = useLoginMutation()
-const dispatch = useDispatch()
+
 
 useEffect(() => {
 setErrMsg('')
@@ -101,7 +100,7 @@ const handleSubmit = async (e) => {
          
             <img className='w-20' src={Logo}/>
           
-          <Typography className='gradient text-center' component="h1" variant="h3">
+          <Typography className='text-center gradient' component="h1" variant="h3">
             Dashboard Login
           </Typography>
           {/* onSubmit={handleSubmit} on Box component */}

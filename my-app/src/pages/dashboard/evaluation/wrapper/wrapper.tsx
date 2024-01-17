@@ -15,7 +15,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { secondaryListItems, applyFunding } from '../../../../components/sidenav/sidenavitems';
 import Logo from '../../../../assets/brand/logoNew.png'
 import Index from '../index/index';
-import PrimarySearchAppBar from '../../../../components/newDrawer/newDrawer';
+import PrimarySearchAppBar from '../../../../components/responsiveNav/newDrawer';
 
 const drawerWidth: number = 240;
 

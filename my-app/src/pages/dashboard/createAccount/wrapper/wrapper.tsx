@@ -14,8 +14,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { secondaryListItems, applyFunding } from '../../../../components/sidenav/sidenavitems';
 import Logo from '../../../../assets/brand/logoNew.png'
-import PrimarySearchAppBar from '../../../../components/newDrawer/newDrawer';
-import IndexCreateAccount from '../index/index';
+import PrimarySearchAppBar from '../../../../components/responsiveNav/newDrawer';
+import WrapperCreateAccount from '../index/index';
 
 const drawerWidth: number = 240;
 
@@ -99,7 +99,7 @@ const darkTheme = createTheme({
   },
 });
 
-export default function WrapperCreateAcount() {
+ function IndexCreateAcount() {
   const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -109,7 +109,6 @@ export default function WrapperCreateAcount() {
     <div>
       
       <ThemeProvider theme={darkTheme}>
-
         <Box sx={{ display: 'flex' }}>
           <CssBaseline />
           <AppBar position="absolute" open={open}>
@@ -186,7 +185,7 @@ export default function WrapperCreateAcount() {
             <Toolbar />
 
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-              <IndexCreateAccount />
+              <WrapperCreateAccount />
             </Container>
           </Box>
         </Box>
@@ -194,3 +193,6 @@ export default function WrapperCreateAcount() {
     </div>
   );
 }
+
+
+export default IndexCreateAcount

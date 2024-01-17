@@ -2,15 +2,15 @@ import { Grid, Paper, Typography } from '@mui/material';
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import Chart from '../graph/graph';
-import TickNumber from '../graph/graph';
+import Chart from '../graphFundedTraining/graph';
+import TickNumber from '../graphFundedTraining/graph';
 import Deposits from '../details/details';
 import BasicTable from '../details/details';
 import PieColor from '../pie/pie';
 import ScrollableTabsButtonPrevent from '../tabs/tabs';
 import AccountInformation from '../accountInformation/accountInformation';
-import ResponsiveLineChart from '../graph2/graph2';
-import LineChartConnectNulls from '../graph/graph';
+import ResponsiveLineChart from '../graphEvaluation/graph2';
+import LineChartConnectNulls from '../graphFundedTraining/graph';
 
 type Props = {}
 

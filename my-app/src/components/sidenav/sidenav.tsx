@@ -16,7 +16,7 @@ import { secondaryListItems, applyFunding } from './sidenavitems';
 import Logo from '../../assets/brand/traderslogo.png'
 import './sidenav.css'
 import Index from '../../pages/dashboard/evaluation/index/index';
-import PrimarySearchAppBar from '../newDrawer/newDrawer';
+import PrimarySearchAppBar from '../responsiveNav/newDrawer';
 
 const drawerWidth: number = 240;
 
